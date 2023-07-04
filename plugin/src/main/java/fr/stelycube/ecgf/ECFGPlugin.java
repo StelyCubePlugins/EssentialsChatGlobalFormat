@@ -1,6 +1,8 @@
 package fr.stelycube.ecgf;
 
+import fr.stelycube.ecgf.config.Config;
 import fr.stelycube.ecgf.config.ConfigLoader;
+import fr.stelycube.ecgf.format.FormatRegistry;
 import fr.stelycube.ecgf.listener.ListenerLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,9 +27,13 @@ public class ECFGPlugin extends JavaPlugin {
             return;
         }
 
+        final Config config = new Config();
+        config.load(configLoader, this, "config.yml");
+
+        final FormatRegistry formatRegistry = new FormatRegistry(config.getFallbackFormat(logger), config.getGroupFormats());
+
         final ListenerLoader listenerLoader = new ListenerLoader();
         listenerLoader.load(this);
-
     }
 
 }
