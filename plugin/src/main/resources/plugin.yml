@@ -1,4 +1,4 @@
-name: "EssentialsChatGlobalFormat"
+name: "ECGF"
 author: "Flowsqy"
 version: "${version}"
 main: "fr.stelycube.ecgf.ECFGPlugin"
