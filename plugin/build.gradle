@@ -28,7 +28,7 @@ java {
     }
 }
 
-archivesBaseName = 'EssentialsChatGlobalFormat'
+base.archivesName = 'EssentialsChatGlobalFormat'
 group = 'fr.stelycube.ecgf'
 version = '1.0.0-SNAPSHOT'
 
