@@ -1,0 +1,12 @@
+# Each format have the following placeholders
+# {DISPLAY_NAME} : The display name of the sender
+# {MESSAGE} : The message sent
+
+# The default format
+# It will be used if a sender does not have any main group specified bellow
+format: "<{DISPLAY_NAME}> {MESSAGE}"
+
+# Group specific formats
+
+group:
+  # admin: "&r[Admin] {DISPLAY_NAME} > &r{MESSAGE}"
