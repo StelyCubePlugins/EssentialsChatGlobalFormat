@@ -1,0 +1,5 @@
+name: "EssentialsChatGlobalFormat"
+author: "Flowsqy"
+version: "${version}"
+main: "fr.stelycube.ecgf.ECFGPlugin"
+api-version: "1.13"

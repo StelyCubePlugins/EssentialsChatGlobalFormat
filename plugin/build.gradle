@@ -24,7 +24,7 @@ java {
 }
 
 archivesBaseName = 'EssentialsChatGlobalFormat'
-group = 'fr.stelycube.essentialschatglobalformat'
+group = 'fr.stelycube.ecgf'
 version = '1.0.0-SNAPSHOT'
 
 processResources {
