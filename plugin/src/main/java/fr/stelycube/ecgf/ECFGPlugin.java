@@ -4,6 +4,8 @@ import fr.stelycube.ecgf.config.Config;
 import fr.stelycube.ecgf.config.ConfigLoader;
 import fr.stelycube.ecgf.format.FormatRegistry;
 import fr.stelycube.ecgf.listener.ListenerLoader;
+import fr.stelycube.ecgf.permission.MainGroupRetriever;
+import fr.stelycube.ecgf.permission.MainGroupRetrieverLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,7 +13,6 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@SuppressWarnings("unused")
 public class ECFGPlugin extends JavaPlugin {
 
     @Override
@@ -32,8 +33,11 @@ public class ECFGPlugin extends JavaPlugin {
 
         final FormatRegistry formatRegistry = new FormatRegistry(config.getFallbackFormat(logger), config.getGroupFormats());
 
+        final MainGroupRetrieverLoader mainGroupRetrieverLoader = new MainGroupRetrieverLoader();
+        final MainGroupRetriever mainGroupRetriever = mainGroupRetrieverLoader.load();
+
         final ListenerLoader listenerLoader = new ListenerLoader();
-        listenerLoader.load(this, formatRegistry, );
+        listenerLoader.load(this, formatRegistry, mainGroupRetriever);
     }
 
 }
