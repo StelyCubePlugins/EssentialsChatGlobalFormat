@@ -33,7 +33,7 @@ public class ECFGPlugin extends JavaPlugin {
         final FormatRegistry formatRegistry = new FormatRegistry(config.getFallbackFormat(logger), config.getGroupFormats());
 
         final ListenerLoader listenerLoader = new ListenerLoader();
-        listenerLoader.load(this);
+        listenerLoader.load(this, formatRegistry, );
     }
 
 }
