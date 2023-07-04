@@ -1,6 +1,7 @@
 package fr.stelycube.ecgf;
 
 import fr.stelycube.ecgf.config.ConfigLoader;
+import fr.stelycube.ecgf.listener.ListenerLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,6 +25,8 @@ public class ECFGPlugin extends JavaPlugin {
             return;
         }
 
+        final ListenerLoader listenerLoader = new ListenerLoader();
+        listenerLoader.load(this);
 
     }
 
