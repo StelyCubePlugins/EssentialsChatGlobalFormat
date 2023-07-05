@@ -1,5 +1,6 @@
 package fr.stelycube.ecgf.config;
 
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,7 +24,9 @@ public class Config {
 
     @NotNull
     private String replaceByMinecraftFormat(@NotNull String configFormat) {
-        return configFormat.replace(DISPLAY_NAME_PLACEHOLDER, "%1$s").replace(MESSAGE_PLACEHOLDER, "%2$s");
+        return ChatColor.translateAlternateColorCodes('&', configFormat)
+                .replace(DISPLAY_NAME_PLACEHOLDER, "%1$s")
+                .replace(MESSAGE_PLACEHOLDER, "%2$s");
     }
 
     @NotNull
