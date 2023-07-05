@@ -6,6 +6,7 @@ import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class LuckPermsLoader implements PermissionLoader {
@@ -23,10 +24,8 @@ public class LuckPermsLoader implements PermissionLoader {
         return enable(provider);
     }
 
-    @Nullable
-    private MainGroupRetriever enable(RegisteredServiceProvider<LuckPerms> provider) {
-        LuckPerms api = provider.getProvider();
-        return null;
+    private @NotNull MainGroupRetriever enable(@NotNull RegisteredServiceProvider<LuckPerms> provider) {
+        return new LuckPermsMainGroupRetriever(provider.getProvider());
     }
 
 }
